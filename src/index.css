@@ -1,0 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+@import "tailwindcss";
+
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Safari и Chrome */
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+@theme {
+  --color-bground: #f4f3f2 ; 
+  --color-input: #f8f8f7 ;
+  --font-jura: "Jura", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  --text-shadow-chirp: 0px 20px 0px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --color-chirp-red: #EC6957;
+  --color-panel: #FBFBFB;
+  --color-author: #8C8C8C;
+  --radius-5xl: 2.5rem;
+}
