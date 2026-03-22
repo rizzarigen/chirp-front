@@ -2,7 +2,7 @@
 
 const ErrorPage = () => {
     return [
-        <div className="w-screen h-screen bg-chirp-red relative">
+        <div className="w-screen h-dvh bg-chirp-red relative">
             <div className="text-white text-shadow-chirp h-full w-screenflex flex flex-col justify-center items-center">
                 <p className=" font-bold font-jura text-[64px] mr-28">//error</p>
                 <p className="font-montserrat font-bold text-9xl line leading-20">404</p>

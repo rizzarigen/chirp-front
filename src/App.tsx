@@ -5,7 +5,7 @@ import MainPage from './pages/MainPage.tsx'
 
 function App() {
   return (
-    <div className='bg-bground w-screen h-screen'>
+    <div className='bg-bground w-screen h-dvh'>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
