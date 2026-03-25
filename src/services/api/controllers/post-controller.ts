@@ -1,5 +1,5 @@
 import { api } from "../../index";
-import type { PostDto } from "../../../types/post/post.type";
+import type { PostDto, sendPostDto } from "../../../types/post/post.type";
 import type { Pageable } from "../../../types/common/pageable.type";
 import type { PageableObject } from "../../../types/page/page.types";
 
@@ -16,7 +16,7 @@ export const postsController = {
         return api.patch<PostDto>(`/posts/${id}`, data);
     },
 
-    createPost: (data: PostDto) => {
+    createPost: (data: sendPostDto) => {
         return api.post<PageableObject>(`/posts/`, data);
     }
 }

@@ -1,6 +1,7 @@
 interface PostProps {
     author: String,
-    content: String
+    content: String,
+    postId: number
 }
 
 const PostComponent = ({author, content}: PostProps) => {

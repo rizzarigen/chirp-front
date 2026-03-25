@@ -1,28 +1,12 @@
 
-import PostComponent from "./PostComponent";
-import { postsController } from "../services/api/controllers/post-controller";
-import { getDefaultPageable, type Pageable } from '../types/common/pageable.type';
-import { useEffect, useState } from "react";
 import type { PostDto } from "../types/post/post.type";
+import PostComponent from "./PostComponent";
 
-const ChirpPanel = () => {
+interface PanelProps {
+    posts: PostDto[] | undefined
+}
 
-    const [posts, setPosts] = useState<PostDto[]>();
-    const [error, setError] = useState('');
-
-    const [pageable] = useState<Pageable>(getDefaultPageable());
-
-    const fetchPosts = () => {
-        postsController.getPosts(pageable)
-            .then(response => {
-                setPosts(response.data.content as PostDto[]);
-            })
-            .catch(() => setError('Ошибка загрузки'));
-    };
-
-    useEffect(() => {
-        fetchPosts()
-    }, []);
+const ChirpPanel = ({posts}: PanelProps) => {
 
     return [
         <div className="relative w-100 md:w-135 h-full overflow-hidden">
@@ -40,7 +24,7 @@ const ChirpPanel = () => {
                                 <li>Нет постов</li>
                         }
                     </ul>
-                </ul>                   
+                </ul>
             </div>
             <button className="bg-chirp-red rounded-full font-jura text-6xl p-4 text-white
             flex justify-center items-center shadow-card hover:scale-102 transition-transform ease-out cursor-pointer size-15 absolute bottom-4 right-4">
